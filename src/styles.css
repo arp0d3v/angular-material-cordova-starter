@@ -1,0 +1,54 @@
+/* 
+    You can add global styles to this file, and also import other style files 
+    https://material.io/tools/icons/?style=baseline
+*/
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~src/assets/iconfont/material-icons.css";
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 36px;
+}
+.action-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.action-bar td {
+    padding: 0;
+    border: none;
+}
+.action-bar-top {
+    top: 0;
+    background-color: #b6b6b6;
+    height: 36px;
+}
+.action-bar-bottom {
+    bottom: 0;
+    background-color: #959fa5;
+    height: 46px;
+}
+.app-drawer {
+    min-width: 200px;
+}
+.container {
+    margin: 5px 10px;
+    padding: 5px;
+}
+.text-center {
+    text-align: center;
+}
+.form-group {
+    padding-top: 1em;
+}
+.shared-spinner-wrapper {
+    position: fixed;
+    text-align: center;
+    z-index: 999;
+}

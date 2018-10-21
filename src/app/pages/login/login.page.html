@@ -1,0 +1,22 @@
+<div class="container" class="text-center">
+  <form #loginForm="ngForm" name="loginForm" class="form-group" (ngSubmit)="login()">
+    <mat-form-field>
+      <input matInput type="tel" class="form-control" id="UserName" name="UserName" placeholder="Username" [(ngModel)]="username"
+        #UserNameInput="ngModel" appStandardNumber appValidMobileNumber>
+      <mat-error *ngIf="UserNameInput.hasError('mobilenumber') && !UserNameInput.hasError('required')">
+        {{UserNameInput | translateError:'Mobile number' }}
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput type="password" class="form-control" id="Password" name="Password" placeholder="Password" [(ngModel)]="password"
+        #PasswordInput="ngModel" appStandardNumber required>
+    </mat-form-field>
+    <div class="text-center">
+      <button mat-stroked-button type="submit" class="btn-block" [disabled]="ajaxCall || loginForm.invalid">
+        <span>Login</span>
+      </button>
+    </div>
+  </form>
+  <app-spinner *ngIf="ajaxCall"></app-spinner>
+</div>

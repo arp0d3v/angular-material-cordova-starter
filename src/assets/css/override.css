@@ -1,0 +1,6 @@
+.action-bar-top-button {
+    min-width: 40px;width: 100%; height: 32px; padding: 0; line-height: 30px;
+}
+.action-bar-bottom-button {
+    min-width: 40px;width: 100%; height: 46px; padding: 0; line-height: 44px;
+}

@@ -1,0 +1,1 @@
+export { MobileNumberValidator } from './mobile-number.validator';

@@ -1,0 +1,54 @@
+<div  (window:resize)="onResize($event)">
+  <table class="action-bar action-bar-top">
+    <tbody>
+      <tr>
+        <td style="width: 50px">
+          <button mat-button class="action-bar-top-button" (click)="goBack();">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+          </button>
+        </td>
+        <td>
+          {{title}}
+        </td>
+        <td style="width: 50px">
+          <button mat-button class="action-bar-top-button">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <mat-drawer-container [hasBackdrop]="true">
+    <mat-drawer #drawer mode="over" position="end">
+      <div class="app-drawer">
+        <mat-list>
+          <a mat-list-item [routerLink]=" ['/home']" (click)="drawer.close()"> <mat-icon>home</mat-icon> Home </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item [routerLink]=" ['/login']" (click)="drawer.close()"> <mat-icon>vpn_key</mat-icon> Login </a>
+        </mat-list>
+      </div>
+    </mat-drawer>
+    <mat-drawer-content [ngStyle]="{'height':contentHeight}">
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  <table class="action-bar action-bar-bottom">
+    <tbody>
+      <tr>
+        <td style="width: 50%">
+          <button mat-button (click)="drawer.toggle()" class="action-bar-bottom-button">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </td>
+        <td style="width: 50%">
+          <a mat-button class="action-bar-bottom-button">
+            <mat-icon>account_box</mat-icon>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div #spinnerWrapper class="shared-spinner-wrapper" [hidden]="!showSpinner">
+  <app-spinner></app-spinner>
+</div>
